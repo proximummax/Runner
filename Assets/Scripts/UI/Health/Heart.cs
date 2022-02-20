@@ -5,7 +5,6 @@ using UnityEngine.Events;
 using UnityEngine.UI;
 
 [RequireComponent(typeof(Image))]
-
 public class Heart : MonoBehaviour
 {
     [SerializeField] private float _lerpDuration;
@@ -19,11 +18,12 @@ public class Heart : MonoBehaviour
     }
     public void ToFill()
     {
-        StartCoroutine(Filling(0, 1, _lerpDuration,Fill));
+        StartCoroutine(Filling(0, 1, _lerpDuration, Fill));
     }
 
-    public void ToEmpty() {
-        StartCoroutine(Filling(1, 0, _lerpDuration,Destroy));
+    public void ToEmpty()
+    {
+        StartCoroutine(Filling(1, 0, _lerpDuration, Destroy));
     }
     private IEnumerator Filling(float startValue, float endValue, float duration, UnityAction<float> LerpingEnd)
     {
@@ -45,7 +45,8 @@ public class Heart : MonoBehaviour
         _image.fillAmount = value;
         Destroy(gameObject);
     }
-    private void Fill(float value) {
+    private void Fill(float value)
+    {
         _image.fillAmount = value;
     }
 }

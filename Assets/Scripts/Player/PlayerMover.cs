@@ -19,21 +19,19 @@ public class PlayerMover : MonoBehaviour
     private void Update()
     {
         if (transform.position != _targetPosition)
-        {
             transform.position = Vector3.MoveTowards(transform.position, _targetPosition, _moveSpeed * Time.deltaTime);
-        }
     }
 
     public void TryMoveUp()
     {
-        if(_targetPosition.y < _maxHeight)
-        SetNextPosition(_stepSize);
+        if (_targetPosition.y < _maxHeight)
+            SetNextPosition(_stepSize);
     }
 
     public void TryMoveDown()
     {
-        if(_targetPosition.y > _minHeight)
-        SetNextPosition(-_stepSize);
+        if (_targetPosition.y > _minHeight)
+            SetNextPosition(-_stepSize);
     }
     private void SetNextPosition(float stepSize)
     {

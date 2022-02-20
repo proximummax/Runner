@@ -32,7 +32,6 @@ public class HealthBar : MonoBehaviour
         }
         else if (_hearts.Count > value && _hearts.Count != 0)
         {
-          //  int deleteHealth = _hearts.Count - value;
             for (int i = 0; i < _hearts.Count - value; i++)
             {
                 DestroyHeart(_hearts[_hearts.Count - 1]);
